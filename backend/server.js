@@ -1,10 +1,12 @@
-const express = require('express')
-const products = require('./data/products')
-const dotenv = require('dotenv')
+import express from 'express'
+import products from './data/products.js'
+import dotenv from 'dotenv'
+import connectDB from './config/database.js'
 
 dotenv.config()
 
 const app = express()
+connectDB()
 
 app.get('/', (req, res) => {
     res.send('App is running.........')
