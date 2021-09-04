@@ -2,6 +2,7 @@
   "name": "eshop",
   "proxy": "http://127.0.0.1:5000",
   "version": "1.0.0",
+  "type": "module",
   "description": "Backend of eshop",
   "main": "server.js",
   "scripts": {
@@ -11,8 +12,10 @@
   "author": "Thanh Nguyen",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "dotenv": "^10.0.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongoose": "^6.0.4"
   },
   "devDependencies": {
     "concurrently": "^6.2.1",
