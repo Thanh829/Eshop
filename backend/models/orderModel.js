@@ -106,6 +106,6 @@ const orderSchema = mongooes.Schema({
     }
 )
 
-const Order = mongooes.model('User', orderSchema)
+const Order = mongooes.model('Order', orderSchema)
 
 export default Order

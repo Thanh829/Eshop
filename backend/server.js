@@ -2,25 +2,25 @@ import express from 'express'
 import products from './data/products.js'
 import dotenv from 'dotenv'
 import connectDB from './config/database.js'
+import productRoutes from './routes/productRoutes.js'
+import { errorHandler, notFoundUrl } from './middleware/errorMiddleware.js'
 
 dotenv.config()
 
 const app = express()
 connectDB()
 
+
+app.use('/api/products', productRoutes)
+
 app.get('/', (req, res) => {
     res.send('App is running.........')
 })
 
-app.get('/api/products', (req, res) => {
-    res.send(products)
-})
 
-app.get('/api/products/:id', (req, res) => {
+app.use(notFoundUrl)
 
-    const product = products.find((p) => p._id === req.params.id)
-    res.send(product)
-})
+app.use(errorHandler)
 
 const PORT = process.env.PORT || 5000
 const NODE_ENV = process.env.NODE_ENV || 'development'
