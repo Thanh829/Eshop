@@ -12,7 +12,7 @@ const orderSchema = mongooes.Schema({
                 type: String,
                 required: true
             },
-            quantity: {
+            qty: {
                 type: Number,
                 required: true,
                 default: 1
@@ -80,6 +80,11 @@ const orderSchema = mongooes.Schema({
     },
     totalPrice: {
         type: String,
+        required: true,
+        default: 0.0
+    },
+    itemsPrice: {
+        type: Number,
         required: true,
         default: 0.0
     },

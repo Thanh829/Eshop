@@ -45,7 +45,7 @@ const CartScreen = ({ match, location, history }) => {
                                     <Col md={2}>
                                         <Image src={x.image} alt={x.name} fluid rounded></Image>
                                     </Col>
-                                    <Col md={3}><Link to={`/product/${x.product}`}>{x.name}</Link></Col>
+                                    {/* <Col md={3}><Link to={`/product/${x.product}`}>{x.name}</Link></Col> */}
                                     <Col md={2}>{x.price}</Col>
                                     <Col md={2}>
                                         <Form.Control as='select' value={x.qty} onChange={(e) =>
